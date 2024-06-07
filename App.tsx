@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import CatGallery from './components/Galeria_de_Fotos'; 
+import Galeria_de_Fotos from './components/Galeria_de_Fotos';
 
 const App: React.FC = () => {
   return (
     <View style={styles.container}>
-      <CatGallery />
+      <Galeria_de_Fotos/>
     </View>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Image, StyleSheet, Button } from 'react-native';
+import { View, Image, StyleSheet, Button, ScrollView} from 'react-native';
 import axios from 'axios';
 
-const CatGallery: React.FC = () => {
+const Galeria_de_Fotos: React.FC = () => {
   const [catUrls, setCatUrls] = useState<string[]>([]);
 
   const fetchCatPhotos = async () => {
@@ -22,32 +22,25 @@ const CatGallery: React.FC = () => {
   
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}><br></br>
+    <Button title="5 Fotos de Gatinhos" onPress={fetchCatPhotos} /><br></br>
       {catUrls.map((url, index) => (
         <Image key={index} source={{ uri: url }} style={styles.image} />
       ))}
-      <Button title="5 Fotos de Gatinhos" onPress={fetchCatPhotos} />
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  scrollViewContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-
-  image: {
-    width: 100,
-    height: 100,
-    resizeMode: 'cover',
-    marginRight: 10,
-  },
-});
-
-export default CatGallery;
+    container: {
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    image: {
+      width: 600,
+      height: 600,
+      marginBottom: 10,
+    },
+  });
+  
+  export default Galeria_de_Fotos;
