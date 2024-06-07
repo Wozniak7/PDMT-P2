@@ -21,7 +21,7 @@ const CatGallery: React.FC = () => {
   return (
     <View style={styles.container}>
       {catUrl && <Image source={{ uri: catUrl }} style={styles.image} />}
-      <Button title="Get New Cat Photo" onPress={fetchCatPhoto} />
+      <Button title="Foto de Gatinhos" onPress={fetchCatPhoto} />
     </View>
   );
 };
